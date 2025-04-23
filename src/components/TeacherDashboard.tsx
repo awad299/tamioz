@@ -3,14 +3,11 @@ import WeeksPage from './WeeksPage';
 
 interface Props {
   data: { [key: string]: any };
+  isTeacher?: boolean;
 }
 
-const TeacherDashboard: React.FC<Props> = ({ data }) => {
-  return (
-    <div className="teacher-dashboard">
-      <WeeksPage data={data} isTeacher={true} />
-    </div>
-  );
+const TeacherDashboard: React.FC<Props> = ({ data, isTeacher = false }) => {
+  return <WeeksPage data={data} isTeacher={isTeacher} />;
 };
 
 export default TeacherDashboard;

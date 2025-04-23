@@ -28,9 +28,12 @@ const WeekView: React.FC<WeekViewProps> = ({ data, isTeacher = false }) => {
   const [studentDetails, setStudentDetails] = useState<DayData[]>([]);
 
   const openDetails = (studentName: string) => {
-    if (week?.["تفاصيل"]?.[studentName]) {
+    const details = week?.تفاصيل?.[studentName];
+    if (details && Array.isArray(details)) {
+      setStudentDetails(details);
       setSelectedStudent(studentName);
-      setStudentDetails(week["تفاصيل"][studentName]);
+    } else {
+      console.warn("❌ لا توجد تفاصيل للطالب:", studentName);
     }
   };
 
@@ -90,7 +93,7 @@ const WeekView: React.FC<WeekViewProps> = ({ data, isTeacher = false }) => {
         ))}
       </div>
 
-      {selectedStudent && (
+      {selectedStudent && studentDetails.length > 0 && (
         <StudentModal
           name={selectedStudent}
           details={studentDetails}

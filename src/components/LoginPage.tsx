@@ -12,7 +12,7 @@ const LoginPage = ({ setIsTeacher }: { setIsTeacher: (value: boolean) => void })
   const handleLogin = () => {
     if (username === 'teacher' && password === '1234') {
       localStorage.setItem("isTeacher", "true");
-      setIsTeacher(true); // ✅ تحديث فوري للحالة
+      setIsTeacher(true);
       navigate('/home');
     } else {
       setError('❌ البيانات غير صحيحة');
@@ -21,7 +21,7 @@ const LoginPage = ({ setIsTeacher }: { setIsTeacher: (value: boolean) => void })
 
   const handleVisitor = () => {
     localStorage.setItem("isTeacher", "false");
-    setIsTeacher(false); // ✅ تحديث فوري للحالة
+    setIsTeacher(false);
     navigate('/home');
   };
 
@@ -35,28 +35,15 @@ const LoginPage = ({ setIsTeacher }: { setIsTeacher: (value: boolean) => void })
             <button className="entry-button visitor" onClick={handleVisitor}>
               <i className="ri-user-line"></i> دخول كـ زائر / ولي أمر
             </button>
-
             <button className="entry-button teacher" onClick={() => setShowLogin(true)}>
               <i className="ri-shield-user-line"></i> دخول المعلم
             </button>
           </>
         ) : (
           <div className="login-form">
-            <input
-              type="text"
-              placeholder="اسم المستخدم"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="كلمة المرور"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button className="entry-button go" onClick={handleLogin}>
-              دخول
-            </button>
+            <input type="text" placeholder="اسم المستخدم" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input type="password" placeholder="كلمة المرور" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button className="entry-button go" onClick={handleLogin}>دخول</button>
             {error && <p className="error">{error}</p>}
           </div>
         )}

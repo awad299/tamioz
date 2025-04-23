@@ -29,7 +29,6 @@ function App() {
       .catch((err) => console.error('فشل في تحميل البيانات:', err));
   }, []);
 
-  // استخدمنا props لإرسال setIsTeacher للصفحات
   return (
     <Router>
       <Routes>

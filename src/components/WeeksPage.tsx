@@ -1,19 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './WeeksPage.css';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { PiNotebookBold } from 'react-icons/pi';
 import { FiArrowRightCircle } from 'react-icons/fi';
 
 interface Props {
   data: { [key: string]: any };
+  isTeacher?: boolean;
 }
 
-const WeeksPage: React.FC<Props> = ({ data }) => {
+const WeeksPage: React.FC<Props> = ({ data, isTeacher = false }) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const isTeacher = location.state?.isTeacher || false;
-
   const weekNames = Object.keys(data).filter((key) => !key.includes("ترتيب"));
 
   const handleClick = (weekName: string) => {
@@ -23,7 +21,7 @@ const WeeksPage: React.FC<Props> = ({ data }) => {
   };
 
   const goBack = () => {
-    navigate('/home', { state: { isTeacher } });
+    navigate('/home');
   };
 
   return (

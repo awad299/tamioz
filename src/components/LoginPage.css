@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: linear-gradient(to bottom right, #f5f7fa, #d9e4f5);
+  margin: 0;
+  padding: 0;
+}
+
+.login-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.login-card h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.entry-button {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.entry-button i {
+  font-size: 22px;
+}
+
+.visitor {
+  background-color: #00b894;
+  color: white;
+}
+
+.teacher {
+  background-color: #6c5ce7;
+  color: white;
+}
+
+.go {
+  background-color: #0984e3;
+  color: white;
+}
+
+.entry-button:hover {
+  transform: scale(1.04);
+  opacity: 0.95;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: right;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

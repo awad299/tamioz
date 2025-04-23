@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+/* قاعدة التصميم */
+body {
+  font-family: 'Tajawal', 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  color: #333;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* للروابط - لو احتجناها مستقبلاً */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* العناوين */
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* تحسين مظهر القوائم */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

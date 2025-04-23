@@ -1,0 +1,113 @@
+/* StudentModal.css */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden; /* منع التمرير */
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1.5rem;
+  width: 96%;
+  max-width: 1000px;
+  height: 95vh; /* نستخدم كل ارتفاع الشاشة تقريبًا */
+  padding: 1.5rem;
+  position: relative;
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden; /* لا تمرير داخلي */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-size: 9.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #4f46e5;
+}
+
+.modal-student-name {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.table-container {
+  flex: 1; /* تأخذ كل المساحة المتبقية */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-table {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  text-align: center;
+  table-layout: fixed;
+  font-size: 0.9rem;
+}
+
+.student-table thead {
+  background-color: #eef2ff;
+  color: #333;
+}
+
+.student-table th,
+.student-table td {
+  padding: 0.4rem;
+  border: 1px solid #e5e7eb;
+  word-wrap: break-word;
+}
+
+.student-table input {
+  width: 50px;
+  padding: 0.3rem;
+  text-align: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.student-table .zero {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .modal-title,
+  .modal-student-name {
+    font-size: 2rem;
+  }
+
+  .student-table {
+    font-size: 0.75rem;
+  }
+
+  .student-table input {
+    width: 40px;
+    font-size: 0.90rem;
+  }
+}
